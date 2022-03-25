@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<!-- 제이쿼리 라이브러리 외부CDN추가 -->
+	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<!-- 부트스트랩 달력1 시작 -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+	<!-- 부트스트랩 달력1 끝 -->
+	<script src="js/reserve.js"></script>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/reserve.css">
+	<link rel="stylesheet" href="css/date.css">
+	<link rel="stylesheet" href="css/footer.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous"
+	 referrerpolicy="no-referrer" />
+</head>
+
+<body>
+<!-- header 시작 -->
+<div class="header-wrap">
+	<header>
+		<div class="rt_gnb">
+			<span><a href="login.html">로그인 &nbsp; |</a></span>
+			<span><a href="join.html">&nbsp;신라리워드가입 &nbsp; |</a></span>
+			<span><a href="#">&nbsp;예약확인 &nbsp; |</a></span>
+			<span><a href="#">&nbsp;한국어</a></span>
+		</div>
+		<div class="ct_gnb">
+			<a href="index.html"><img src="img/logo.gif" alt="신라호텔로고"></a>
+		</div>
+		<nav class="lb_gnb">
+			<ul>
+				<li><a href="#">호텔찾기</a></li>
+				<li><a href="reserve.html">예약</a></li>
+			</ul>
+		</nav>
+
+		<nav class="rb_gnb">
+			<ul>
+				<li><a href="#">호텔신라 소개</a></li>
+				<li><a href="#">고객문의</a></li>
+				<li><a href="#">신라리워즈</a></li>
+			</ul>
+		</nav>
+	</header>
+</div>
+<!-- header 끝 -->
+	<main>
+		<section class="content_wrap1">
+		<!--	<h1 style="text-align:center;"><img src="img/rsv_step1_on.png" alt=""> </h1> -->
+
+			<!-- 부트스트랩 달력 시작 -->
+			<div class="container px-1 px-sm-5 mx-auto date_range">
+				<form autocomplete="off">
+					<div class="flex-row d-flex justify-content-center">
+						<div class="col-xl-5 col-lg-6 col-11 px-1">
+							<div class="input-group input-daterange"> <label>숙박기간</label> <input type="text" name="daterange" value="01/01/2018 - 01/15/2018" readonly /> </div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<!-- 부트스트랩 달력 끝 -->
+			<h1 style="margin-left:10px; margin-bottom: 20px; font-size:18px;">객실선택</h1>
+			<hr style="border: 2px solid #856f56; ">
+			<div class="room_select">
+				<ul>
+					<li>
+						<div class="select_flex">
+							<div class="select1">
+								<img src="img/room1.jpg" alt="방1">
+							</div>
+							<div class="select2">
+								<h2>Member Exclusive</h2>
+								<p>기준 2명, 최대 5명</p>
+							</div>
+							<div class="select3">
+								<div>
+									<span style="margin-right:10px;">성인</span>
+									<svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation" id="decreaseQuantity1">
+										<path d="M19 13H5v-2h14v2z"></path>
+									</svg>
+									<span id="numberUpDown1">0</span>
+									<svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation" id="increaseQuantity1">
+										<path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+									</svg>
+								</div>
+							</div>
+							<div class="select4">
+								<p>378,000</p>
+							</div>
+							<div class="select5">
+								<a href="payment.html">
+									<img src="img/reserve_step1_rsvopen.gif" alt="예약하기 버튼"></a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="select_flex">
+							<div class="select1">
+								<img src="img/room2.jpg" alt="방2">
+							</div>
+							<div class="select2">
+								<h2>Rewards Urban Island</h2>
+								<p>기준 2명, 최대 5명</p>
+							</div>
+							<div class="select3">
+								<div>
+									<span style="margin-right:10px;">성인</span>
+									<svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation" id="decreaseQuantity2">
+										<path d="M19 13H5v-2h14v2z"></path>
+									</svg>
+									<span id="numberUpDown2">0</span>
+									<svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation" id="increaseQuantity2">
+										<path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+									</svg>
+								</div>
+							</div>
+							<div class="select4">
+								<p>480,000</p>
+							</div>
+							<div class="select5">
+								<a href="payment.html">
+									<img src="img/reserve_step1_rsvopen.gif" alt="예약하기 버튼"></a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="select_flex">
+							<div class="select1">
+								<img src="img/room3.jpg" alt="방3">
+							</div>
+							<div class="select2">
+								<h2>Rewards Morning Delights</h2>
+								<p>기준 2명, 최대 5명</p>
+							</div>
+							<div class="select3">
+								<div>
+									<span style="margin-right:10px;">성인</span>
+									<svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation" id="decreaseQuantity3">
+										<path d="M19 13H5v-2h14v2z"></path>
+									</svg>
+									<span id="numberUpDown3">0</span>
+									<svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation" id="increaseQuantity3">
+										<path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+									</svg>
+								</div>
+							</div>
+							<div class="select4">
+								<p>490,000</p>
+							</div>
+							<div class="select5">
+								<a href="payment.html">
+									<img src="img/reserve_step1_rsvopen.gif" alt="예약하기 버튼"></a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="select_flex">
+							<div class="select1">
+								<img src="img/room4.jpg" alt="방4">
+							</div>
+							<div class="select2">
+								<h2>Rewards Suite</h2>
+								<p>기준 2명, 최대 5명</p>
+							</div>
+							<div class="select3">
+								<div>
+									<span style="margin-right:10px;">성인</span>
+									<svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation" id="decreaseQuantity4">
+										<path d="M19 13H5v-2h14v2z"></path>
+									</svg>
+									<span id="numberUpDown4">0</span>
+									<svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation" id="increaseQuantity4">
+										<path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+									</svg>
+								</div>
+							</div>
+							<div class="select4">
+								<p>520,000</p>
+							</div>
+							<div class="select5">
+								<a href="payment.html">
+									<img src="img/reserve_step1_rsvopen.gif" alt="예약하기 버튼"></a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="select_flex">
+							<div class="select1">
+								<img src="img/room5.jpg" alt="방5">
+							</div>
+							<div class="select2">
+								<h2>Rewards In Room Delights</h2>
+								<p>기준 2명, 최대 5명</p>
+							</div>
+							<div class="select3">
+								<div>
+									<span style="margin-right:10px;">성인</span>
+									<svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation" id="decreaseQuantity5">
+										<path d="M19 13H5v-2h14v2z"></path>
+									</svg>
+									<span id="numberUpDown5">0</span>
+									<svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation" id="increaseQuantity5">
+										<path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+									</svg>
+								</div>
+							</div>
+							<div class="select4">
+								<p>520,000</p>
+							</div>
+							<div class="select5">
+								<a href="payment.html">
+									<img src="img/reserve_step1_rsvopen.gif" alt="예약하기 버튼"></a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+
+		<!-- footer 시작 -->
+		<div class="info_wrap">
+			<div class="info_main">
+				<h3><img src="img/localBoxCompInfo.gif" alt="신라인포로고"></h3>
+				<div class="info_content1">
+					<ul>
+						<li class="brand"><a href="#">The Shilla</a></li>
+						<li class="mono"><a href="#">Shilla Monogra</a></li>
+						<li class="stay"><a href="#">Shilla Stay</a></li>
+					</ul>
+				</div>
+				<div class="info_content2">
+					<div class="num">
+						<div class="num1">
+						</div>
+
+					</div>
+					<div class="map">
+						<div class="map_img">
+							<dl class="map_float">
+								<dd><a href="#">호텔신라소개</a></dd>
+							</dl>
+							<dl class="map_float">
+								<dd><a href="#">고객문의</a></dd>
+							</dl>
+							<dl>
+								<dd><a href="#">사이트맵</a></dd>
+							</dl>
+							<dl class="map_float map_margin">
+								<dd><a href="#">The Shilla shop</a></dd>
+							</dl>
+							<dl class="map_margin">
+								<dd><a href="#">삼성상품권</a></dd>
+							</dl>
+						</div>
+					</div>
+					<div class="sns">
+						<h2 class="sns_title">제목</h2>
+						<dl>
+							<a href="#">
+								<dt class="face">페이스북</dt>
+							</a>
+							<a href="#">
+								<dt class="ins">인스타그램</dt>
+							</a>
+							<a href="#">
+								<dt class="wei">웨이보</dt>
+							</a>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer_main">
+			<div class="footer_content1">
+				<ul class="content1_img">
+					<li><a href="#">신라리워즈 약관</a></li>
+					<li><a href="#">개인정보처리방침</a></li>
+					<li><a href="#">이메일무단수집금지</a></li>
+					<li><a href="#">윤리경영(부정제보)</a></li>
+				</ul>
+			</div>
+			<div class="footer_content2">
+				<ul class="content2_img">
+					<li><a href="#">한국어</a></li>
+					<li><a href="#">ENGLISH</a></li>
+					<li><a href="#">日本語</a></li>
+					<li><a href="#">简体中文</a></li>
+				</ul>
+			</div>
+			<div class="footer_content3">
+				<p>㈜호텔신라 서울특별시 중구 동호로 249 (우: 04605) Tel: 02-2233-3131 Fax: 02-2230-3769 사업자등록번호: 203-81-43363 통신판매신고번호:
+					중구00272호 대표이사 이부진 호스팅서비스제공자 삼성SDS㈜ 서울객실예약 shilla.reserve@samsung.com 제주객실예약 jejushilla@samsung.com</p>
+				<p class="footer_content3_p"><a href="#"><img src="img/footLinkbtn.gif" alt="사업자정보확인"></a></p>
+			</div>
+		</div>
+		<!-- footer 끝 -->
+	</main>
+</body>
+
+</html>
