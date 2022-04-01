@@ -8,11 +8,24 @@
 	<title>Document</title>
 	<!-- 제이쿼리 라이브러리 외부CDN추가 -->
 	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
-	<!-- 부트스트랩 달력1 시작 -->
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+	<!-- 부트스트랩 달력2 시작 -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+			$('.input-daterange').datepicker({
+				format: 'dd-mm-yyyy',
+				todayHighlight: true,
+				startDate: '0d'
+			});
+
+		});
+	</script>
 	<!-- 부트스트랩 달력1 끝 -->
 	<script src="js/reserve.js"></script>
 	<link rel="stylesheet" href="css/reset.css">
@@ -26,48 +39,53 @@
 </head>
 
 <body>
-<!-- header 시작 -->
-<div class="header-wrap">
-	<header>
-		<div class="rt_gnb">
-			<span><a href="login.html">로그인 &nbsp; |</a></span>
-			<span><a href="join.html">&nbsp;신라리워드가입 &nbsp; |</a></span>
-			<span><a href="#">&nbsp;예약확인</a></span>
-		</div>
-		<div class="ct_gnb">
-			<a href="index.html"><img src="img/logo.gif" alt="신라호텔로고"></a>
-		</div>
-		<nav class="lb_gnb">
-			<ul>
-				<li><a href="#">이용후기</a></li>
-				<li><a href="reserve.html">예약</a></li>
-			</ul>
-		</nav>
+	<!-- header 시작 -->
+	<div class="header-wrap">
+		<header>
+			<div class="rt_gnb">
+				<span><a href="login.html">로그인 &nbsp; |</a></span>
+				<span><a href="join.html">&nbsp;신라리워드가입 &nbsp; |</a></span>
+				<span><a href="#">&nbsp;예약확인</a></span>
+			</div>
+			<div class="ct_gnb">
+				<a href="index.html"><img src="img/logo.gif" alt="신라호텔로고"></a>
+			</div>
+			<nav class="lb_gnb">
+				<ul>
+					<li><a href="#">이용후기</a></li>
+					<li><a href="reserve.html">예약</a></li>
+				</ul>
+			</nav>
 
-		<nav class="rb_gnb">
-			<ul>
-				<li><a href="#">호텔신라 소개</a></li>
-				<li><a href="#">고객문의</a></li>
-			</ul>
-		</nav>
-	</header>
-</div>
-<!-- header 끝 -->
+			<nav class="rb_gnb">
+				<ul>
+					<li><a href="#">호텔신라 소개</a></li>
+					<li><a href="#">고객문의</a></li>
+				</ul>
+			</nav>
+		</header>
+	</div>
+	<!-- header 끝 -->
 	<main>
 		<section class="content_wrap1">
-		<!--	<h1 style="text-align:center;"><img src="img/rsv_step1_on.png" alt=""> </h1> -->
 
-			<!-- 부트스트랩 달력 시작 -->
-			<div class="container px-1 px-sm-5 mx-auto date_range">
+
+			<div class="container daterange px-1 px-sm-5 mx-auto">
 				<form autocomplete="off">
-					<div class="flex-row d-flex justify-content-center">
-						<div class="col-xl-5 col-lg-6 col-11 px-1">
-							<div class="input-group input-daterange"> <label>숙박기간</label> <input type="text" name="daterange" value="01/01/2018 - 01/15/2018" readonly /> </div>
+					<div class="flex-sm-row flex-column d-flex">
+						<div class="col-sm-9 col-12 px-0 mb-2">
+							<div class="input-group input-daterange">
+								<input type="text" class="form-control" placeholder="Arriving Date" readonly>
+								<input type="text" class="form-control" placeholder="Leaving Date" readonly>
+							</div>
 						</div>
+						<div class="col-sm-3 col-12 px-0"> <button type="submit" class="btn btn-black">Search</button> </div>
 					</div>
 				</form>
 			</div>
-			<!-- 부트스트랩 달력 끝 -->
+
+
+
 			<h1 style="margin-left:10px; margin-bottom: 20px; font-size:18px;">객실선택</h1>
 			<hr style="border: 2px solid #856f56; ">
 			<div class="room_select">
@@ -82,16 +100,10 @@
 								<p>기준 2명, 최대 5명</p>
 							</div>
 							<div class="select3">
-								<div>
-									<span style="margin-right:10px;">성인</span>
-									<svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation" id="decreaseQuantity1">
-										<path d="M19 13H5v-2h14v2z"></path>
-									</svg>
-									<span id="numberUpDown1">0</span>
-									<svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation" id="increaseQuantity1">
-										<path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
-									</svg>
-								</div>
+								<span style="margin-right:10px;">성인</span>
+								<i class="fa-solid fa-minus" id="decreaseQuantity1" style="cursor:pointer; font-size:15px; padding: 10px;"></i>
+								<span id="numberUpDown1">0</span>
+								<i class="fa-solid fa-plus" id="increaseQuantity1" style="cursor:pointer; font-size:15px; padding: 10px;"></i>
 							</div>
 							<div class="select4">
 								<p>378,000</p>
@@ -112,16 +124,10 @@
 								<p>기준 2명, 최대 5명</p>
 							</div>
 							<div class="select3">
-								<div>
-									<span style="margin-right:10px;">성인</span>
-									<svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation" id="decreaseQuantity2">
-										<path d="M19 13H5v-2h14v2z"></path>
-									</svg>
-									<span id="numberUpDown2">0</span>
-									<svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation" id="increaseQuantity2">
-										<path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
-									</svg>
-								</div>
+								<span style="margin-right:10px;">성인</span>
+								<i class="fa-solid fa-minus" id="decreaseQuantity2" style="cursor:pointer; font-size:15px; padding: 10px;"></i>
+								<span id="numberUpDown2">0</span>
+								<i class="fa-solid fa-plus" id="increaseQuantity2" style="cursor:pointer; font-size:15px; padding: 10px;"></i>
 							</div>
 							<div class="select4">
 								<p>480,000</p>
@@ -141,18 +147,12 @@
 								<h2>Rewards Morning Delights</h2>
 								<p>기준 2명, 최대 5명</p>
 							</div>
-							<div class="select3">
-								<div>
+								<div class="select3">
 									<span style="margin-right:10px;">성인</span>
-									<svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation" id="decreaseQuantity3">
-										<path d="M19 13H5v-2h14v2z"></path>
-									</svg>
+									<i class="fa-solid fa-minus" id="decreaseQuantity3" style="cursor:pointer; font-size:15px; padding: 10px;"></i>
 									<span id="numberUpDown3">0</span>
-									<svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation" id="increaseQuantity3">
-										<path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
-									</svg>
+									<i class="fa-solid fa-plus" id="increaseQuantity3" style="cursor:pointer; font-size:15px; padding: 10px;"></i>
 								</div>
-							</div>
 							<div class="select4">
 								<p>490,000</p>
 							</div>
@@ -171,18 +171,12 @@
 								<h2>Rewards Suite</h2>
 								<p>기준 2명, 최대 5명</p>
 							</div>
-							<div class="select3">
-								<div>
+								<div class="select3">
 									<span style="margin-right:10px;">성인</span>
-									<svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation" id="decreaseQuantity4">
-										<path d="M19 13H5v-2h14v2z"></path>
-									</svg>
+									<i class="fa-solid fa-minus" id="decreaseQuantity4" style="cursor:pointer; font-size:15px; padding: 10px;"></i>
 									<span id="numberUpDown4">0</span>
-									<svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation" id="increaseQuantity4">
-										<path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
-									</svg>
+									<i class="fa-solid fa-plus" id="increaseQuantity4" style="cursor:pointer; font-size:15px; padding: 10px;"></i>
 								</div>
-							</div>
 							<div class="select4">
 								<p>520,000</p>
 							</div>
@@ -201,18 +195,12 @@
 								<h2>Rewards In Room Delights</h2>
 								<p>기준 2명, 최대 5명</p>
 							</div>
-							<div class="select3">
-								<div>
+								<div class="select3">
 									<span style="margin-right:10px;">성인</span>
-									<svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation" id="decreaseQuantity5">
-										<path d="M19 13H5v-2h14v2z"></path>
-									</svg>
+									<i class="fa-solid fa-minus" id="decreaseQuantity5" style="cursor:pointer; font-size:15px; padding: 10px;"></i>
 									<span id="numberUpDown5">0</span>
-									<svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation" id="increaseQuantity5">
-										<path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
-									</svg>
+									<i class="fa-solid fa-plus" id="increaseQuantity5" style="cursor:pointer; font-size:15px; padding: 10px;"></i>
 								</div>
-							</div>
 							<div class="select4">
 								<p>520,000</p>
 							</div>

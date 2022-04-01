@@ -1,18 +1,4 @@
-//date.js
-$(function() {
-//오늘 변수, 내일 변수 지정
-var now = new Date();
-var tomorrow = new Date(new Date().setDate(now.getDate() + 1));
 
-$('input[name="daterange"]').daterangepicker({
-"startDate": now,
-"endDate": tomorrow,
-opens: 'center',
-locale: {
-format: 'DD/MM/YYYY'
-}
-});
-});
 // 버튼 클릭 시 숫자 증가/감소 room1
 $(function() {
   $('#decreaseQuantity1').click(function(e) {
@@ -115,5 +101,31 @@ $(function() {
       num = 3;
     }
     $('#numberUpDown4').text(num);
+  });
+});
+// 버튼 클릭 시 숫자 증가/감소 room5
+$(function() {
+  $('#decreaseQuantity5').click(function(e) {
+    e.preventDefault();
+    var stat = $('#numberUpDown5').text();
+    var num = parseInt(stat, 10);
+    num--;
+    if (num <= 0) {
+      //alert('더이상 줄일수 없습니다.');
+      num = 0;
+    }
+    $('#numberUpDown5').text(num);
+  });
+  $('#increaseQuantity5').click(function(e) {
+    e.preventDefault();
+    var stat = $('#numberUpDown5').text();
+    var num = parseInt(stat, 10);
+    num++;
+
+    if (num > 3) {
+      alert('입실 가능한최대 인원은 3명입니다.');
+      num = 3;
+    }
+    $('#numberUpDown5').text(num);
   });
 });
